@@ -1,4 +1,5 @@
 import type { SQS } from 'aws-sdk';
+// @ts-expect-error // sqs-consumer untyped
 import type { ConsumerOptions } from 'sqs-consumer';
 import type { Producer } from 'sqs-producer';
 

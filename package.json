@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-packages/sqs",
+  "name": "@pflegenavi/sqs",
   "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config=jest-e2e.config.js --detectOpenHandles --runInBand --forceExit",
-    "prepublish:npm": "npm run format && npm run lint && npm run test && npm run build",
-    "publish:npm": "npm publish --access public"
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --registry https://npm.pkg.jetbrains.space/pflegenavi/p/pn/pflegenavi"
   },
   "repository": {
     "type": "git",

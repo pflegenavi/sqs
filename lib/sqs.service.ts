@@ -1,3 +1,4 @@
+// @ts-expect-error // sqs-consumer untyped
 import { Consumer } from 'sqs-consumer';
 import { Producer } from 'sqs-producer';
 import type { QueueAttributeName } from 'aws-sdk/clients/sqs';
