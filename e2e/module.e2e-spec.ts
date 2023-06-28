@@ -1,4 +1,4 @@
-import * as AWS from 'aws-sdk';
+import { Message } from '@aws-sdk/client-sqs';
 import waitForExpect from 'wait-for-expect';
 import { Test, TestingModule } from '@nestjs/testing';
 
@@ -48,12 +48,12 @@ describe('SqsModule', () => {
   class TestHandler {
     @SqsMessageHandler()
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    public async handleTestMessage(message: AWS.SQS.Message) {
+    public async handleTestMessage(message: Message) {
       fakeProcessor(message);
     }
 
     @SqsConsumerEventHandler(SqsConsumerEvent.PROCESSING_ERROR)
-    public handleErrorEvent(err: Error, message: AWS.SQS.Message) {
+    public handleErrorEvent(err: Error, message: Message) {
       fakeErrorEventHandler(err, message);
     }
   }

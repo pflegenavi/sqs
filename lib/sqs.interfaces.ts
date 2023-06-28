@@ -1,4 +1,4 @@
-import * as SQS from 'aws-sdk/clients/sqs';
+import { Message as SqsMessage } from '@aws-sdk/client-sqs';
 import { ModuleMetadata } from '@nestjs/common';
 
 import { SqsConsumerEvent } from './sqs.types';
@@ -10,7 +10,7 @@ export interface Message<T = any> {
   groupId?: string;
   deduplicationId?: string;
   delaySeconds?: number;
-  messageAttributes?: SQS.MessageBodyAttributeMap;
+  messageAttributes?: SqsMessage['MessageAttributes'];
 }
 
 export interface SqsAsyncConfig extends Pick<ModuleMetadata, 'imports'> {
